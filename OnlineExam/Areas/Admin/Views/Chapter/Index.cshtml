@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<div class="col-md-12">
+    <br />
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            @Admin_Resources.LblExam
+        </div>
+        <div class="panel-body">
+            @Html.Partial("~/Views/Shared/_Loader.cshtml")
+            @Html.Partial("~/Views/Shared/_AlertMSG.cshtml")
+            <div class="form-group">
+                <div class="col-sm-9">@Admin_Resources.LblNote<b>:</b> <span style="color: #FF0000">@Admin_Resources.LblMandatory</span></div>
+            </div>
+            <br />
+            <div class="form-horizontal">
+                <br />
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                @Admin_Resources.LblChapter<span style="color: #FF0000; font-weight: bold">*</span>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" id="txtChapterName" onkeydown="return (event.keyCode!=13);" class="form-control" maxlength="60" placeholder="Enter Chapter Name" tabindex="1" />
+                            </div>
+                        </div>
+                        @Html.Partial("~/Areas/Admin/Views/Shared/_Active.cshtml")
+                        <div class="form-group">
+                            <div class="col-sm-12" style="text-align: center;">
+                                <button type="submit" id="btnSubmit" class="btn btn-primary" tabindex="3"><span class="fa fa-floppy-o" aria-hidden="true">&nbsp;@Admin_Resources.BtnSubmit</span></button>
+                                <button type="button" id="btnClose" class="btn btn-warning" tabindex="4"><span class="fa fa-ban" aria-hidden="true">&nbsp;@Admin_Resources.BtnCancel</span></button>
+                                <input type="hidden" id="ChapterId" name="ChapterId" value="0" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-horizontal">
+                            <div class="row" style="width:100%; margin:0 auto; border:solid 1px">
+                                <table id="example" style="width:100%;" class="table table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-xs-2">@Admin_Resources.LblAction</th>
+                                            <th class="col-xs-7">@Admin_Resources.LblChapter</th>
+                                            <th class="col-xs-3">@Admin_Resources.LblStatus</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-horizontal">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.0/js/responsive.bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap.timepicker/0.2.6/js/bootstrap-timepicker.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Areas/Admin/Scripts/Chapter.js"></script>
+    <script type="text/javascript">
+        Chapter.Init();
+    </script>
+}
+
+
+

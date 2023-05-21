@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineExam", "OnlineExam.csproj", "{05AF9E62-A6D4-4B2A-AB4F-303BF6297C65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{20CC85A3-9BB6-4585-9DFE-637CAE83EB65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05AF9E62-A6D4-4B2A-AB4F-303BF6297C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05AF9E62-A6D4-4B2A-AB4F-303BF6297C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05AF9E62-A6D4-4B2A-AB4F-303BF6297C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05AF9E62-A6D4-4B2A-AB4F-303BF6297C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20CC85A3-9BB6-4585-9DFE-637CAE83EB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20CC85A3-9BB6-4585-9DFE-637CAE83EB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20CC85A3-9BB6-4585-9DFE-637CAE83EB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20CC85A3-9BB6-4585-9DFE-637CAE83EB65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF6E6C92-900A-4E27-A832-777BF6FCAFD6}
+	EndGlobalSection
+EndGlobal

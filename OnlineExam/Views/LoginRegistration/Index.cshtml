@@ -1,0 +1,537 @@
+﻿@model OnlineExam.Models.VMLogin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=1094 ,initial-scale=1.0">
+    <script src="~/Assets/LoginAssets/LoginScripts/kit.fontawesome.js"></script>
+    <link href="~/Assets/LoginAssets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/LoginAssets/css/login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@*<link href="~/Assets/LoginAssets/css/password.css" rel="stylesheet" />*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="~/Assets/LoginAssets/LoginScripts/Duplicate.js"></script>
+
+   @Html.Partial("~/Views/Shared/_Loader.cshtml")
+    <script>
+
+        function disableBackButtonAllBrowsers() {
+            window.history.forward()
+        };
+        window.onload = disableBackButtonAllBrowsers();
+        window.onpageshow = function (evts) {
+            if (evts.persisted) {
+                disableBackButtonAllBrowsers();
+            }
+        };
+        window.onunload = function () {
+            void (0)
+        };
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->  @*For Online Registration staging link*@
+
+    @*<script async src="https://www.googletagmanager.com/gtag/js?id=G-T1BNL9HPSY"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-T1BNL9HPSY');
+        </script>*@
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->  @*for live link*@
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFNSNS8RNK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+
+        gtag('config', 'G-ZFNSNS8RNK');
+    </script>
+</head>
+
+<body>
+    @* Loader code *@
+    <div class="loader-container" style="display:none">
+        <div class="load">
+            <div class="gear one">
+                <svg id="blue" viewbox="0 0 100 100" fill="#94DDFF">
+                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z">
+                    </path>
+                </svg>
+            </div>
+            <div class="gear two">
+                <svg id="pink" viewbox="0 0 100 100" fill="#FB8BB9">
+                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z">
+                    </path>
+                </svg>
+            </div>
+            <div class="gear three">
+                <svg id="yellow" viewbox="0 0 100 100" fill="#FFCD5C">
+                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z">
+                    </path>
+                </svg>
+            </div>
+
+            <svg class="blur-circle">
+                <filter id="blur">
+                    <fegaussianblur in="SourceGraphic" stddeviation="13"></fegaussianblur>
+                </filter>
+
+            </svg>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse bg-color">
+        <div class="container-fluid mr-lg-5 ml-lg-5 mr-md-3 ml-md-3 pr-xl-5">
+            <div class="navbar-header">
+                <a class="navbar-brand pt-0 pb-0" href="#"><img src="~/Assets/images/avatars/avatar.png" alt="logo" /></a>
+            </div>
+
+            <div style="max-width:93%; display:inline;">
+                <ul class="nav navbar-nav navbar-right text-white">
+                    <li class="pr-md-4 pr-2 mob-desk" style="width:100%;"><span><a href="#" id="instituteLogin" style="color:white;text-decoration:none;"></a><b>DeMo</b></span></li>
+                    <li class="pr-md-4 pr-2 mob-desk" style="width:100%;"><span><a href="#" id="instituteLogin" style="color:white;text-decoration:none;">Demo</a></span></li>
+                    @*<li class="pr-md-4 pr-2 mob-desk" style="width:100%;"><span style="border-left:3px solid #53bccc;padding-left:8px;"><a href="#" id="instituteLogin" style="color:white;text-decoration:none;">Institution Login</a></span></li>*@
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Main Contain -->
+    <div class="main-contain">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div id="TopHeaderDisplay" class="top-note text-center mr-lg-5 ml-lg-5 mr-md-3 ml-md-3 pr-xl-5">
+                    @*<p class="mb-0">@Model.HomePageHeader</p>*@
+                    <marquee attribute_name="attribute_value" ....more attributes>
+                        <p class="mb-0">Online Examination Modules</p>
+                    </marquee>
+                </div>
+            </div>
+            <div class="contain-data pt-2">
+                <div class="row">
+                    <div class="col-md-7 pl-0">
+                        <div class="heading-admin" id="clgNameCtn">
+                            @*<h1 class="mb-3" id="Examheading"><span class="text-white">@Model.CollegeName</span> </h1>*@
+                            <div id="Examheading">
+                                <h2 class="mb-3" id="onlineHeading"><span>ONLINE</span></h2>
+                                <h2 class="mb-3"><span id="regHeading">EXAMINATION</span></h2>
+                            </div>
+                            @*<h6 class="text-white">@Model.Address</h6>*@
+                            <h6 class="text-white">NOW OPEN FOR EXAMINATION</h6>
+                        </div>
+                        <!-- Notice for desktop view -->
+                        <div class="notice desktop-pad">
+
+                            <div style="width:90%;">
+                                <h5 class="m-0">NOTICE</h5>
+                                <p>Important dates for Online EXAMINATION/Application @DateTime.Now.Year</p>
+                                <div class="scrollbar-notice" id="style-1">
+                                    @*<marquee direction="up" scrollamount="40">*@
+
+                                    @*<div class="list-notice"><span class="mr-lg-5 mr-md-3 mr-2 course">F.Y.BSC(IT)</span><span class="ml-lg-5 ml-md-3  ml-2 session">Starts from 22/07/2020 to 04/08/2020</span></div>*@
+                                    <div class="list-notice"><span class="mr-lg-5 mr-md-3 mr-2 course">Demo</span><span class="ml-lg-5 ml-md-3  ml-2 session" style="margin-left : -20px !important;">Start from 12/13/2023 to 12/13/2023</span></div>
+
+                                    @*</marquee>*@
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Notice for desktop view END -->
+                    </div>
+
+
+
+                    <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-5 pb-5">
+                        <div class="login" id="divLogin" style="display:none;">
+                            <!-- Tabs -->
+                            <ul class="nav nav-pills mb-4">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" id="studentpill" href="#student">Student</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" id="institutepill" href="#institution">Institution</a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="student">
+                                    @using (Html.BeginForm("StudentLogin", "LoginRegistration", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            @*<input type="text" class="form-control" placeholder="Username">*@
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Username*" })
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group" id="show_hide_password">
+                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password*" })
+                                                <i class="fa fa-eye-slash field-icon" aria-hidden="true" style="color:#AEB8C5"></i>
+                                            </div>
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <div class="form-group form-check mb-0">
+
+                                                <!--@Html.CheckBoxFor(m => m.RememberMe)
+                                                    @Html.LabelFor(m => m.RememberMe)
+                                                </label>-->
+                                            </div>
+                                            <div class="forget-pass">
+                                                <a id="forgotPassord" href="#">Forgot password?</a>
+                                                @*@Html.ActionLink("Forgot Password?", "ForgotPass")*@
+                                            </div>
+                                        </div>
+                                        <div class="mt-md-4">
+
+                                            @*<button type="submit" class="btn btn-login" id="btnStudLogin" onclick="alert(ValidCaptcha());">LOGIN</button>*@
+                                            @*<button type="submit" class="btn btn-login" id="btnStudLogin" onclick="ValidCaptcha()">LOGIN</button>*@
+
+                                            <button type="submit" class="btn btn-login" id="btnStudLogin">LOGIN</button>
+                                        </div>
+
+                                    }
+                                </div>
+
+                                <div class="tab-pane fade" id="institution">
+                                    @using (Html.BeginForm("AdminLogin", "LoginRegistration", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+
+                                            @Html.TextBoxFor(m => m.EmailAdmin, new { @class = "form-control", placeholder = "Username*" })
+                                            @Html.ValidationMessageFor(m => m.EmailAdmin, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="input-group" id="show_hide_password_admin">
+                                                @Html.PasswordFor(m => m.PasswordAdmin, new { @class = "form-control", placeholder = "Password*" })
+                                                <i class="fa fa-eye-slash field-icon" aria-hidden="true" style="color:#AEB8C5"></i>
+                                            </div>
+                                            @Html.ValidationMessageFor(m => m.PasswordAdmin, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                           
+                                            <div class="forget-pass">
+                                                <a id="adminforgotPassord" href="#">Forgot password?</a>
+                                                @*@Html.ActionLink("Forgot Password?", "ForgotPass")*@
+                                            </div>
+                                        </div>
+                                        <div class="mt-md-5">
+                                            @*@if (Convert.ToInt32(Session["COLLEGEID"]) == 471)
+                                                {
+                                                    <button type="submit" class="btn btn-login" id="btnAdminLogin">COLLEGE LOGIN</button>
+                                                }*@
+                                            <button type="submit" class="btn btn-login" id="btnAdminLogin">COLLEGE LOGIN</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="register" id="divRegister">
+                            @*Registration*@
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="student">
+                                    <div class="form-group">
+                                        <input type="text" id="registrationUserName" class="form-control" maxlength="16" placeholder="UserName*">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" id="registrationPassword" class="form-control" maxlength="16" placeholder="Password*">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="registrationConfirmPassword" maxlength="16" placeholder="Confirm Password*">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="registrationMobileNumber" maxlength="10" placeholder="Mobile Number*" onkeypress="return isMobileNumber(event);" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="registrationEmail" placeholder="Email Id">
+                                    </div>
+                                    <a href="https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp" id="a1" @*style="color:#6ED4FF"*@ target="popup" onclick="window.open('https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp','popup','width=1000,height=1000'); return false;">Don't have Email then Click here Create Gmail Account</a>
+                                    <div class="mt-md-4">
+                                        <button type="button" class="btn btn-signup" id="btnLinkLogin">GO TO LOGIN</button>
+
+                                        <button type="button" id="btnRegister" class="btn btn-login">REGISTER</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="register" id="divForgotPassword" style="display:none">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="student">
+                                    <div class="form-group">
+                                        <input type="text" id="forgotPasswordUserName" class="form-control" placeholder="Enter Registered Mobile No.*" maxlength="10" pattern="[1-9]{1}[0-9]{9}" keyup="return isNumber(event)" />
+                                    </div>
+                                    <div class="mt-md-5">
+                                        <button type="button" class="btn btn-signup" id="btnLinkLogin2">BACK</button>
+                                        <button type="button" id="btnGetPassword" class="btn btn-login">GET CREDENTIAL</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" value="@TempData["Message"]" id="hdnMessage" />
+
+
+                    </div>
+                    <div class="notice d-sm-block d-md-none" style="width:98%;">
+                        <div>
+                            <h5 class="m-0">NOTICE</h5>
+                            <p>Important dates for Online EXAMINATION/Application @DateTime.Now.Year</p>
+                            <div class="scrollbar-notice" id="style-1">
+
+                                <div class="list-notice"><span class="mr-lg-5 mr-md-3 mr-2 course">F.Y.BSC(IT)</span><span class="ml-lg-5 ml-md-3  ml-2 session">Starts from 22/07/2020 to 04/08/2020</span></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<footer>
+            <marquee attribute_name="attribute_value" ....more attributes>
+                <p class="mb-0 pt-3 text-white"><h1 class="text-white">Dear Institue/Admin Users, if you are not able to access, please try again after 02:30PM</h1> </p>
+            </marquee>
+        </footer>*@
+
+    <script src="~/Assets/LoginAssets/js/jquery.min.js"></script>
+    <script src="~/Assets/LoginAssets/js/bootstrap.min.js"></script>
+    <script src="~/Assets/LoginAssets/LoginScripts/LoginDetails.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/lib/js/emojione.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="~/Assets/LoginAssets/LoginScripts/Common.js"></script>
+    <!-- Customize Theme Script-->
+    <script>
+
+        function validate_text() {
+            debugger;
+            var compare_text = $('#registrationPassword').val(); //document.form1.text.value;
+            for (var i = 0; i < swear_words_arr.length; i++) {
+                for (var j = 0; j < (compare_text.length); j++) {
+                    if (swear_words_arr[i] == compare_text.substring(j, (j + swear_words_arr[i].length)).toLowerCase()) {
+                        swear_alert_arr[swear_alert_count] = compare_text.substring(j, (j + swear_words_arr[i].length));
+                        swear_alert_count++;
+                    }
+                }
+            }
+            var alert_text = "";
+            for (var k = 1; k <= swear_alert_count; k++) {
+                alert_text += "\n" + "(" + k + ")  " + swear_alert_arr[k - 1];
+            }
+            if (swear_alert_count > 0) {
+                /*alert("The message will not be sent!!!\nThe following illegal words were found:\n_______________________________\n" + alert_text + "\n_______________________________");*/
+                alert("The following illegal words were found:\n_______________________________\n" + alert_text + "\n_______________________________");
+                $('#registrationPassword').val("");
+                document.form1.text.select();
+            }
+            else {
+                document.form1.submit();
+            }
+        }
+        function select_area() {
+            document.form1.text.select();
+        }
+        $(document).ready(function () {
+
+            if (window.IsDuplicate()) {
+                location.href = "/LoginRegistration/UserLogout";
+
+            }
+        });
+        function numericFilter(txb) {
+            txb.value = txb.value.replace('^[0-9]+$');
+            //this.value = this.value.replace(/[^0-9.]/g, '');
+        }
+        function isNumber(e) {
+            var regex = new RegExp('^[0-9]+$');
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            if (regex.test(str)) {
+                return true;
+            }
+            else {
+                e.preventDefault();
+                return false;
+            }
+        };
+        function isMobileNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+        function isNumber(evt) {
+            var textboxValue = $('#' + evt.id).val();
+            var reg = /^\d+$/;
+            var result = reg.test(textboxValue);
+            if (result == false) {
+
+
+
+                $('#' + evt.id).val('');
+                $('#' + evt.id).focus();
+                return false;
+            }
+            return true;
+        }
+
+        $(document).ready(function () {
+
+            /*Captcha();*/
+            $("#show_hide_password i").on('click', function (event) {
+                event.preventDefault();
+                if ($('#show_hide_password input').attr("type") == "text") {
+                    $('#show_hide_password input').attr('type', 'password');
+                    $('#show_hide_password i').addClass("fa-eye-slash");
+                    $('#show_hide_password i').removeClass("fa-eye");
+                } else if ($('#show_hide_password input').attr("type") == "password") {
+                    $('#show_hide_password input').attr('type', 'text');
+                    $('#show_hide_password i').removeClass("fa-eye-slash");
+                    $('#show_hide_password i').addClass("fa-eye");
+                }
+            });
+            //show_hide_password_admin
+            $("#show_hide_password_admin i").on('click', function (event) {
+                event.preventDefault();
+                if ($('#show_hide_password_admin input').attr("type") == "text") {
+                    $('#show_hide_password_admin input').attr('type', 'password');
+                    $('#show_hide_password_admin i').addClass("fa-eye-slash");
+                    $('#show_hide_password_admin i').removeClass("fa-eye");
+                } else if ($('#show_hide_password_admin input').attr("type") == "password") {
+                    $('#show_hide_password_admin input').attr('type', 'text');
+                    $('#show_hide_password_admin i').removeClass("fa-eye-slash");
+                    $('#show_hide_password_admin i').addClass("fa-eye");
+                }
+            });
+            $("#show_hide_password_TeamsStudent i").on('click', function (event) {
+                event.preventDefault();
+                if ($('#show_hide_password_TeamsStudent input').attr("type") == "text") {
+                    $('#show_hide_password_TeamsStudent input').attr('type', 'password');
+                    $('#show_hide_password_TeamsStudent i').addClass("fa-eye-slash");
+                    $('#show_hide_password_TeamsStudent i').removeClass("fa-eye");
+                } else if ($('#show_hide_password_TeamsStudent input').attr("type") == "password") {
+                    $('#show_hide_password_TeamsStudent input').attr('type', 'text');
+                    $('#show_hide_password_TeamsStudent i').removeClass("fa-eye-slash");
+                    $('#show_hide_password_TeamsStudent i').addClass("fa-eye");
+                }
+            });
+            $('#registrationPassword').on("cut copy paste", function (e) {
+                e.preventDefault();
+            });
+            $('#registrationConfirmPassword').on("cut copy paste", function (e) {
+                e.preventDefault();
+            });
+            $('#Password').on("cut copy paste", function (e) {
+                e.preventDefault();
+            });
+            $('#PasswordAdmin').on("cut copy paste", function (e) {
+                e.preventDefault();
+            });
+            $('#txtInput').on("cut copy paste", function (e) {
+                e.preventDefault();
+            });
+            $('#txtInput').on('dragstart drop', function (e) {
+                e.preventDefault();
+                return false;
+            });
+            LoginDetails.Init();
+
+            if ($('#hdnMessage').val() != null && $('#hdnMessage').val() != '') {
+                alert($('#hdnMessage').val());
+                $('#hdnMessage').val('');
+            }
+
+            $('#click').click(function () {
+                $('.sidenav-panel').toggleClass('sidenav-panel-inner');
+            });
+
+            $('.close-panel').click(function () {
+                $('.sidenav-panel').addClass('panel-close');
+                $('.sidenav-panel').removeClass('sidenav-panel-inner');
+            });
+
+
+            //institute loin
+            $("#instituteLogin").click(function () {
+                $("#divRegister").css("display", "none");
+                $("#studentpill").removeClass("active");
+                $("#institutepill").addClass("active");
+                $('#divLogin').css("display", "block");
+                $("#student").removeClass("active");
+                $("#student").removeClass("show");
+                $("#institution").addClass("active");
+                $("#institution").addClass("show");
+            })
+        })
+
+        $(document).ready(function () {
+            if (something == "True") {
+                $('#registrationPassword').password();
+            }
+            else {
+                $('#registrationPassword');
+            }
+        });
+
+   
+
+        $(document).ready(function () {
+            var signup = $('#hdnIsSignUpActive').val();
+
+            if (signup == "False") {
+                $('#divLogin').css('display', 'block');
+                $('#divRegister').css('display', 'none')
+            }
+            else {
+                //$('#divRegister').css('display', 'none')
+            }
+        });
+
+        function CreateEmail() {
+            window.open("https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp", 'mywindow', 'fullscreen=yes, scrollbars=auto');        }
+
+    </script>
+    <script>
+    $(document).ready(function () {
+        var Status = '@TempData["Status"]'
+        if (parseInt(Status) == 5) {
+            alert("Please Insert Proper User Name And Password");
+        }
+        else if (parseInt(Status) == 6) {
+            alert("Please Login Admin Portal");
+        }
+        else if(parseInt(Status) == 7){
+            alert("College Approval Pending");
+        }
+
+
+    });
+    </script>
+
+</body>
+</html>

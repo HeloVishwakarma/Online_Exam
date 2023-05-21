@@ -1,0 +1,482 @@
+﻿@font-face {
+    font-family: poppinsregular;
+    src: url(../webfonts/poppins-font/regular/Poppins-regular.ttf);
+    src: url(../webfonts/poppins-font/regular/poppins-regular-webfont.eot);
+    src: url(../webfonts/poppins-font/regular/poppins-regular-webfont.woff2) format('woff2'),url(../webfonts/poppins-font/regular/poppins-regular-webfont.woff) format('woff'),url(../webfonts/poppins-font/regular/poppins-regular-webfont.svg#poppinsregular) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: poppinssemibold;
+    src: url(../webfonts/poppins-font/semibold/poppins-semibold-webfont.eot);
+    src: url(../webfonts/poppins-font/semibold/poppins-semibold-webfont.eot?#iefix) format('embedded-opentype'),url(../webfonts/poppins-font/semibold/poppins-semibold-webfont.woff2) format('woff2'),url(../webfonts/poppins-font/semibold/poppins-semibold-webfont.woff) format('woff'),url(../webfonts/poppins-font/semibold/poppins-semibold-webfont.svg#poppinssemibold) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: open_sansbold;
+    src: url(../webfonts/opensans/bold/opensans-bold-webfont.eot);
+    src: url(../webfonts/opensans/bold/opensans-bold-webfont.eot?#iefix) format('embedded-opentype'),url(../webfonts/opensans/bold/opensans-bold-webfont.woff2) format('woff2'),url(../webfonts/opensans/bold/opensans-bold-webfont.woff) format('woff'),url(../webfonts/opensans/bold/opensans-bold-webfont.ttf) format('truetype'),url(../webfonts/opensans/bold/opensans-bold-webfont.svg#open_sansbold) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: open_sanslight;
+    src: url(../webfonts/opensans/light/opensans-light-webfont.eot);
+    src: url(../webfonts/opensans/light/opensans-light-webfont.eot?#iefix) format('embedded-opentype'),url(../webfonts/opensans/light/opensans-light-webfont.woff2) format('woff2'),url(../webfonts/opensans/light/opensans-light-webfont.woff) format('woff'),url(../webfonts/opensans/light/opensans-light-webfont.ttf) format('truetype'),url(../webfonts/opensans/light/opensans-light-webfont.svg#open_sanslight) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: open_sansregular;
+    src: url(../webfonts/opensans/regular/opensans-regular-webfont.eot);
+    src: url(../webfonts/opensans/regular/opensans-regular-webfont.eot?#iefix) format('embedded-opentype'),url(../webfonts/opensans/regular/opensans-regular-webfont.woff2) format('woff2'),url(../webfonts/opensans/regular/opensans-regular-webfont.woff) format('woff'),url(../webfonts/opensans/regular/opensans-regular-webfont.ttf) format('truetype'),url(../webfonts/opensans/regular/opensans-regular-webfont.svg#open_sansregular) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: open_sanssemibold;
+    src: url(../webfonts/opensans/semibold/opensans-semibold-webfont.eot);
+    src: url(../webfonts/opensans/semibold/opensans-semibold-webfont.eot?#iefix) format('embedded-opentype'),url(../webfonts/opensans/semibold/opensans-semibold-webfont.woff2) format('woff2'),url(../webfonts/opensans/semibold/opensans-semibold-webfont.woff) format('woff'),url(../webfonts/opensans/semibold/opensans-semibold-webfont.ttf) format('truetype'),url(../webfonts/opensans/semibold/opensans-semibold-webfont.svg#open_sanssemibold) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+body {
+    font-family: open_sansregular;
+    background-color: #f2f5fa
+}
+
+sup {
+    color: red;
+    font-weight: 600
+}
+
+label {
+    font-family: poppinssemibold;
+    font-size: 12px;
+    color: #717c99
+}
+
+.form-control {
+    font-size: 12px;
+    color: #717c99;
+    border: 0
+}
+
+.input-group-text {
+    background: #fff
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none
+}
+
+.form-check-input {
+    margin-top: 2px
+}
+
+.in-house {
+    font-size: 10px;
+    color: #717c99
+}
+
+.main-heading {
+    border-bottom: 1px solid #aeb8c5
+}
+
+    .main-heading h5 {
+        font-family: open_sansbold;
+        font-size: 16px;
+        color: #494f5f;
+        text-transform: uppercase
+    }
+
+.wizard-heading {
+    font-family: open_sansbold;
+    color: #717c99;
+    font-size: 16px
+}
+
+#smartwizard {
+    background-image: linear-gradient(to right,#33afe4,#597528);
+    border-radius: 6px;
+    padding: 10px 4px 0
+}
+
+    #smartwizard ul li {
+        float: right;
+        padding: 8px 5px 1px 0;
+        margin-bottom: 0;
+        list-style: none;
+        font-size: 12px;
+        width: 111px
+    }
+
+        #smartwizard ul li a {
+            color: #f5f5f5;
+            text-decoration: none
+        }
+
+            #smartwizard ul li a span p {
+                border-radius: 50%;
+                background-color: transparent;
+                margin: 0;
+                color: #f5f5f5;
+                border: 1px solid #f5f5f5;
+                width: 25px;
+                height: 25px;
+                line-height: 22px;
+                margin-left: auto;
+                margin-right: auto
+            }
+
+    #smartwizard ul {
+        display: flex;
+        padding-left: 0;
+        margin: 0;
+        text-align: center;
+        white-space: nowrap;
+        padding-bottom: 12px
+    }
+
+    #smartwizard > ul > li.active > a {
+        border: none !important;
+        color: #fff !important;
+        background: 0 0 !important;
+        font-weight: 700
+    }
+
+        #smartwizard > ul > li.active > a span .step-num {
+            color: #1e3e59 !important;
+            background-color: #fff !important
+        }
+
+    #smartwizard > ul > li.complete > a span .step-num {
+        color: #fff !important;
+        background-color: #98ca3c !important
+    }
+
+    #smartwizard > ul > li.active {
+        border-bottom: 2px solid #fff
+    }
+
+    #smartwizard > ul > li.complete.clickable.locked > a span .step-num {
+        color: #fff !important;
+        background-color: #f08296 !important
+    }
+
+.contain-data .scrolling-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap
+}
+
+.myaccordion {
+    font-family: poppinsregular
+}
+
+    .myaccordion .btn.focus, .myaccordion .btn:focus {
+        outline: 0;
+        box-shadow: none
+    }
+
+    .myaccordion .fa-stack {
+        font-size: 14px
+    }
+
+    .myaccordion .btn {
+        width: 100%;
+        font-weight: 700;
+        color: #3a3e48;
+        padding: 0;
+        border-bottom: 1px solid #aeb8c5;
+        border-radius: 0
+    }
+
+        .myaccordion .btn:focus, .myaccordion .btn:hover {
+            color: #33afe4;
+            border-bottom: 1px solid #33afe4;
+            border-radius: 0
+        }
+
+    .myaccordion .btn-link:focus, .myaccordion .btn-link:hover {
+        text-decoration: none
+    }
+
+    .myaccordion .btn.btn-rounded {
+        border-radius: 27px;
+        text-transform: uppercase;
+        font-size: 12px;
+        padding: 8px 40px
+    }
+
+    .myaccordion li + li {
+        margin-top: 10px
+    }
+
+    .myaccordion .headings-border {
+        margin-bottom: 10px
+    }
+
+    .myaccordion .fa-circle {
+        display: none
+    }
+
+    .myaccordion .heading {
+        font-size: 14px
+    }
+
+.custom-control-input {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 1rem;
+    height: 1.25rem;
+    opacity: 0
+}
+
+.custom-control-label {
+    color: #3a3e48;
+    font-size: 11px;
+    cursor: pointer;
+    line-height: 24px
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #50d8bb;
+    border-color: #50d8bb;
+    box-shadow: none
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0
+}
+
+.footer-text {
+    font-family: open_sanssemibold;
+    background-color: #1e3e59;
+    padding: 8px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%
+}
+
+    .footer-text h6 {
+        font-size: 10px;
+        color: rgba(255,255,255,.4)
+    }
+
+.alert-box {
+    font-size: 12px;
+    color: #3a3e48;
+    background-color: #e2f5fc;
+    border: 1px solid #bee3f3;
+    padding: 15px
+}
+
+    .alert-box .alert-note {
+        color: #717c99
+    }
+
+.scaner-data {
+    color: #3a3e48;
+    font-family: poppinsregular
+}
+
+    .scaner-data h5 {
+        font-family: poppinssemibold;
+        font-size: 18px
+    }
+
+    .scaner-data p {
+        font-size: 12px
+    }
+
+    .scaner-data .btn-modal {
+        background: #98ca3c;
+        color: #fff;
+        font-size: 12px;
+        padding: 13px 20px
+    }
+
+        .scaner-data .btn-modal:hover {
+            box-shadow: 0 1px 4px #667491;
+            text-decoration: none
+        }
+
+.dataTables_filter .input-group-text {
+    background: #f2f5fa !important;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    padding: 9px 12px
+}
+
+.page-link {
+    font-size: 12px
+}
+
+.table td, .table th {
+    padding: .4rem
+}
+
+    .table td i {
+        cursor: pointer
+    }
+
+table {
+    color: #a3afc7 !important
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 0 !important
+}
+
+.form-wizard-next-btn.bg-gradient, .form-wizard-submit.bg-gradient {
+    background-color: #98ca3c;
+    color: #fff;
+    display: inline-block;
+    min-width: 100px;
+    min-width: 120px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none
+}
+
+    .form-wizard-next-btn.bg-gradient:focus, .form-wizard-next-btn.bg-gradient:hover, .form-wizard-submit.bg-gradient:focus, .form-wizard-submit.bg-gradient:hover {
+        box-shadow: 0 1px 4px #667491;
+        text-decoration: none
+    }
+
+.form-wizard-cancel-btn, .form-wizard-previous-btn.bg-gradient {
+    background-color: transparent;
+    border: 1px solid #1e3e59;
+    color: #1e3e59;
+    display: inline-block;
+    min-width: 100px;
+    min-width: 120px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none
+}
+
+    .form-wizard-cancel-btn:hover, .form-wizard-previous-btn.bg-gradient:focus, .form-wizard-previous-btn.bg-gradient:hover {
+        box-shadow: 0 1px 4px #667491;
+        text-decoration: none
+    }
+
+.form-group a {
+    text-decoration: none
+}
+
+.heading span, .sub-heading span {
+    font-size: 14px;
+    color: #3a3e48;
+    font-weight: 700
+}
+
+.heading img, .sub-heading img {
+    width: 25px;
+    height: 25px;
+    margin-right: 6px
+}
+
+hr {
+    margin-top: .5rem;
+    margin-bottom: .5rem
+}
+
+.wizard-div {
+    background-color: #fff;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    border-radius: 6px
+}
+
+.form-control {
+    background-color: #f2f5fa
+}
+
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #b4b5d5;
+        outline: 0;
+        border: 1px solid #b4b5d5
+    }
+
+.input-group-text {
+    background: #f2f5fa
+}
+
+.heading-inst {
+    border-bottom: 1px solid #ccc
+}
+
+    .heading-inst h5 {
+        font-size: 16px;
+        color: #33afe4
+    }
+
+.inst {
+    background: #fff;
+    box-shadow: 0 0 4px #ccc;
+    border-radius: 2px;
+    padding: 15px 20px
+}
+
+.inst-heading {
+    color: red;
+    font-size: 16px
+}
+
+.general-inst {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+    .general-inst span {
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: underline
+    }
+
+.inst-text p {
+    margin-bottom: 0;
+    font-size: 12px
+}
+
+@media (max-width:767px) {
+    .navbar-header .navbar-brand img {
+        width: 80%
+    }
+}
+
+@media (min-width:1480px) {
+    #smartwizard ul li {
+        padding: 8px 8px 1px 8px;
+        font-size: 14px
+    }
+}
+
+@media (min-width:1840px) {
+    #smartwizard ul li {
+        padding: 8px 20px 1px 20px;
+        font-size: 14px
+    }
+}

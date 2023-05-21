@@ -1,0 +1,169 @@
+.wizard-content-left {
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.45);
+  background-image: url("https://i.ibb.co/X292hJF/form-wizard-bg-2.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  padding: 30px;
+}
+.wizard-content-left h1 {
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 600;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+.form-wizard {
+  color: #888888;
+/*  padding: 30px;*/
+}
+.form-wizard .form-wizard-header {
+  text-align: center;
+}
+.form-wizard .form-wizard-next-btn.bg-gradient, .form-wizard .form-wizard-submit.bg-gradient {
+  background-color: #98CA3C;
+  color: #ffffff;
+  display: inline-block;
+  min-width: 100px;
+  min-width: 120px;
+  padding: 10px;
+  text-align: center;
+    border-radius: 4px;
+}
+.form-wizard .form-wizard-next-btn.bg-gradient:hover, .form-wizard .form-wizard-next-btn.bg-gradient:focus, .form-wizard .form-wizard-submit.bg-gradient:hover, .form-wizard .form-wizard-submit.bg-gradient:focus {
+  box-shadow: 0px 1px 4px #667491;
+  text-decoration: none;
+}
+.form-wizard .form-wizard-previous-btn.bg-gradient, .form-wizard .form-wizard-cancel-btn {
+  background-color: transparent;
+  border: 1px solid #1E3E59;
+  color: #1E3E59;
+  display: inline-block;
+  min-width: 100px;
+  min-width: 120px;
+  padding: 10px;
+  text-align: center;
+    border-radius: 4px;
+}
+.form-wizard .form-wizard-previous-btn.bg-gradient:hover, .form-wizard .form-wizard-previous-btn.bg-gradient:focus, .form-wizard .form-wizard-cancel-btn:hover {
+  box-shadow: 0px 1px 4px #667491;
+  text-decoration: none;
+}
+.form-wizard .wizard-fieldset {
+  display: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.form-wizard .wizard-fieldset.show {
+  display: block;
+}
+.form-wizard .wizard-form-error {
+  display: none;
+  background-color: #d70b0b;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.form-wizard .form-wizard-previous-btn {
+  background-color: #98CA3C;
+}
+
+.form-wizard .form-wizard-header .bg-gradient {
+  margin: 10px 0 30px;
+    background-image: linear-gradient(to right, #33AFE4 , #98CA3C);
+    border-radius: 40px;
+    padding: 10px 0px 4px;
+}
+.form-wizard .form-wizard-steps li {
+  width: 7.6%;
+  float: left;
+  position: relative;
+}
+.form-wizard .form-wizard-steps li::after {
+  background-color: #f3f3f3;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+.form-wizard .form-wizard-steps li span {
+  background-color: #F2F5FA;
+  border: 5px solid rgba(204, 204, 204, 0.4);
+  border-radius: 50%;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+.form-wizard .form-wizard-steps li:last-child::after {
+  width: 50%;
+}
+.form-wizard .form-wizard-steps li.active span, .form-wizard .form-wizard-steps li.activated span {
+  background-color: #98CA3C;
+  color: #ffffff;
+  border: 5px solid #fff;
+}
+.form-wizard .form-wizard-steps li.active::after, .form-wizard .form-wizard-steps li.activated::after {
+  background-color: #98CA3C;
+  left: 50%;
+  width: 50%;
+  border-color: #98CA3C;
+}
+.form-wizard .form-wizard-steps li.activated::after {
+  width: 100%;
+  border-color: #98CA3C;
+}
+.form-wizard .form-wizard-steps li:last-child::after {
+  left: 0;
+}
+.form-wizard .wizard-password-eye {
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+
+@keyframes click-radio-wave {
+  0% {
+    width: 25px;
+    height: 25px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    margin-left: -15px;
+    margin-top: -15px;
+    opacity: 0.0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wizard-content-left {
+     height: auto;
+  }
+  .form-wizard .form-wizard-steps li span {
+     height: 15px;
+     width: 15px 
+  }
+  .form-wizard .form-wizard-steps li.active span, 
+  .form-wizard .form-wizard-steps li.activated span {
+     border: 3px solid #fff;
+  }
+}
